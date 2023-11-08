@@ -4,7 +4,7 @@ Version: 0.0.1
 Authors@R: 
     person("Andreas Gammelgaard", "Damsbo", , "agdamsbo@clin.au.dk", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Learning reproducible R with DDEA November 8.
 License: CC0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
