@@ -22,4 +22,6 @@ Imports:
     tidyr,
     usethis
 Suggests: 
-    renv
+    gitcreds,
+    renv,
+    styler

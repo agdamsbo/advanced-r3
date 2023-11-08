@@ -4,7 +4,7 @@ pak::pak("rostools/r3")
 
 r3::install_packages_advanced()
 
-# There will be a pop-up to type in your name (first and 
+# There will be a pop-up to type in your name (first and
 # last), as well as your email
 r3::setup_git_config()
 
