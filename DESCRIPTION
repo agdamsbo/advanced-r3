@@ -20,5 +20,4 @@ Imports:
     snakecase,
     stringr,
     tidyr,
-    usethis,
-    r3
+    usethis
