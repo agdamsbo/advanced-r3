@@ -49,5 +49,4 @@ po/*~
 rsconnect/
 data-raw/nmr-omics/
 .Rbuildignore
-.DS-Store
 .DS_Store
