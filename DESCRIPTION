@@ -1,4 +1,11 @@
-PACKAGE: advanced-r3
-Title: "LearningR"
-Type: Project
+Package: advancedr3
+Title: Learn3R
 Version: 0.0.1
+Authors@R: 
+    person("Andreas Gammelgaard", "Damsbo", , "agdamsbo@clin.au.dk", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: What the package does (one paragraph).
+License: CC0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
