@@ -19,6 +19,7 @@ Imports:
     rmarkdown,
     snakecase,
     stringr,
+    targets,
     tidyr,
     usethis
 Suggests: 
