@@ -16,6 +16,7 @@ Imports:
     knitr,
     readr,
     readxl,
+    rmarkdown,
     snakecase,
     stringr,
     tidyr
