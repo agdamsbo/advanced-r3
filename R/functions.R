@@ -86,3 +86,80 @@ tidy_model_output <- function(workflow_fitted_model) {
     workflows::extract_fit_parsnip() |>
     broom::tidy(exponentiate = TRUE)
 }
+
+
+#' Split Lipidomics data set to list by metabolites
+#'
+#' @param data Lipidomics data set long format
+#'
+#' @return list
+split_by_metabolite <- function(data, col) {
+  data %>%
+    column_values_to_snake_case(metabolite) |>
+    dplyr::group_split(metabolite) |>
+    purrr::map(metabolite_to_wider)
+}
+
+#' Generate model results
+#'
+#' @param data Lipidomics wide format
+#'
+#' @return list
+generate_model_results <- function(data) {
+  create_model_workflow(
+    parsnip::logistic_reg() |>
+      parsnip::set_engine("glm"),
+    data |>
+      create_recipe_spec(tidyselect::starts_with("metabolite_"))
+  ) |>
+    fit(data) |>
+    tidy_model_output()
+}
+
+
+#' Add original metabolite names to model results
+#'
+#' @param model_results Model results
+#' @param data Original lipidomics
+#'
+#' @return tibble
+add_original_metabolite_names <- function(model_results, data) {
+  data %>%
+    dplyr::mutate(term = metabolite) %>%
+    column_values_to_snake_case(term) %>%
+    dplyr::mutate(term = stringr::str_c("metabolite_", term)) %>%
+    dplyr::distinct(term, metabolite) |>
+    dplyr::right_join(model_results, by = "term")
+}
+
+#' Calculate model estimates
+#'
+#' @param data lipidomics data
+#'
+#' @return tibble
+calculate_estimates <- function(data) {
+  data |>
+    split_by_metabolite() |>
+    map(generate_model_results) |>
+    list_rbind() |>
+    filter(str_detect(term, "metabolite_")) |>
+    add_original_metabolite_names(data)
+}
+
+
+#' Plotting model estimates
+#'
+#' @param results tibble of estimates
+#'
+#' @return ggplot object
+plot_estimates <- function(results) {
+  results |>
+    ggplot(aes(
+      x = estimate,
+      y = metabolite,
+      xmin = estimate - std.error,
+      xmax = estimate + std.error
+    )) +
+    geom_pointrange() +
+    coord_fixed(xlim = c(0, 5))
+}

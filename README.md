@@ -1,9 +1,3 @@
----
-editor_options:
-  markdown:
-    wrap: 72
-    canonical: true
----
 
 ~~TODO: Add more to the title of your project here~~
 
