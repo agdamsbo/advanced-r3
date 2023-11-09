@@ -15,15 +15,18 @@ Imports:
     ggplot2,
     here,
     knitr,
+    parsnip,
     readr,
     readxl,
+    recipes,
     rmarkdown,
     snakecase,
     stringr,
     tarchetypes,
     targets,
     tidyr,
-    usethis
+    usethis,
+    workflows
 Suggests: 
     gitcreds,
     pak,
@@ -33,4 +36,5 @@ Suggests:
     stRoke,
     styler
 Depends: 
+    tidymodels,
     tidyverse

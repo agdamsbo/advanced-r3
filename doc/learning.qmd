@@ -16,6 +16,7 @@ editor:
 targets::tar_config_set(store = here::here("_targets"))
 library(tidyverse)
 library(targets)
+library(tidymodels)
 lipidomics <- tar_read(lipidomics)
 ```
 
@@ -30,4 +31,34 @@ targets::tar_read(df_stats_by_metabolite) %>%
 
 ```{r}
 tar_read(fig_metabolites_distribution)
+```
+
+## Building the model
+
+```{r}
+log_reg_specs <- logistic_reg() |>
+  set_engine("glm")
+log_reg_specs
+```
+
+```{r}
+lipidomics %>%
+  count(code, metabolite) %>%
+  filter(n > 1)
+```
+
+```{r}
+lipidomics_wide <- lipidomics |> metabolite_to_wider()
+
+recipe(class ~ metabolite_cholesterol + age + gender, data = lipidomics_wide)
+
+recipe(lipidomics_wide) %>%
+  update_role(metabolite_lipid_ch_3_1, age, gender, new_role = "predictor") %>%
+  update_role(class, new_role = "outcome") %>%
+  step_normalize(starts_with("metabolite_"))
+
+lipidomics_wide |> create_recipe_spec()
+
+lipidomics_wide |> 
+  create_recipe_spec(metabolite_cholesterol)
 ```
