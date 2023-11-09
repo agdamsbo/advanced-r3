@@ -35,6 +35,8 @@ tar_read(fig_metabolites_distribution)
 
 ## Building the model
 
+Parsnip
+
 ```{r}
 log_reg_specs <- logistic_reg() |>
   set_engine("glm")
@@ -46,6 +48,8 @@ lipidomics %>%
   count(code, metabolite) %>%
   filter(n > 1)
 ```
+
+Recipe
 
 ```{r}
 lipidomics_wide <- lipidomics |> metabolite_to_wider()
@@ -59,6 +63,23 @@ recipe(lipidomics_wide) %>%
 
 lipidomics_wide |> create_recipe_spec()
 
-lipidomics_wide |> 
+recipe_specs <- lipidomics_wide |>
   create_recipe_spec(metabolite_cholesterol)
+```
+
+```{r}
+workflow() %>%
+  add_model(log_reg_specs) %>%
+  add_recipe(recipe_specs)
+```
+
+```{r}
+create_model_workflow(
+  logistic_reg() |>
+    set_engine("glm"),
+  lipidomics_wide |>
+    create_recipe_spec(metabolite_cholesterol)
+) |>
+  fit(lipidomics_wide) |>
+  tidy_model_output()
 ```

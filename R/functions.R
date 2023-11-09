@@ -58,7 +58,31 @@ metabolite_to_wider <- function(data) {
 #' @return recipe
 create_recipe_spec <- function(data, metabolite_variable) {
   recipes::recipe(data) %>%
-    recipes::update_role({{ metabolite_variable }}, age, gender, new_role = "predictor") %>%
-    recipes::update_role(class, new_role = "outcome") %>%
+    recipes::update_role({{ metabolite_variable }}, age, gender, new_role = "predictor") |>
+    recipes::update_role(class, new_role = "outcome") |>
     recipes::step_normalize(tidyselect::starts_with("metabolite_"))
+}
+
+
+#' Create workflow object
+#'
+#' @param model_specs Parsnip model specs
+#' @param recipe_specs Recipe specs
+#'
+#' @return workflows object
+create_model_workflow <- function(model_specs, recipe_specs) {
+  workflows::workflow() |>
+    workflows::add_model(model_specs) |>
+    workflows::add_recipe(recipe_specs)
+}
+
+#' Tidy model output of workflow fitted model
+#'
+#' @param workflow_fitted_model workflow fitted model
+#'
+#' @return tibble
+tidy_model_output <- function(workflow_fitted_model) {
+  workflow_fitted_model |>
+    workflows::extract_fit_parsnip() |>
+    broom::tidy(exponentiate = TRUE)
 }
