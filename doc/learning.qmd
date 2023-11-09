@@ -10,12 +10,7 @@ editor:
     canonical: true
 ---
 
-## Header 1
-
-```{r setup}
-#| include: false
-knitr::opts_chunk$set(echo = TRUE)
-```
+## Setup and load data
 
 ```{r setup}
 library(tidyverse)
@@ -26,5 +21,14 @@ lipidomics <- read_csv(here::here("data/lipidomics.csv"))
 ## Basic statistics
 
 ```{r basic-stats}
+lipidomics |>
+  group_by(metabolite) |>
+  summarise(across(value, list(mean = mean, sd = sd))) |>
+  mutate(across(where(is.numeric), ~ round(.x, digits = 1)))
+```
 
+```{r basic-stats-fun}
+
+
+lipidomics |> descriptive_stats()
 ```
