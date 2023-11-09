@@ -17,15 +17,14 @@ editor:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
-# Code chunk
+```{r setup}
+library(tidyverse)
+source(here::here("R/functions.R"))
+lipidomics <- read_csv(here::here("data/lipidomics.csv"))
 ```
 
-## THis is poor
+## Basic statistics
 
--   Something
--   new item
--   like this
--   Is item 3
--   new
--   list
+```{r basic-stats}
+
+```
