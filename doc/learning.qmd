@@ -1,6 +1,6 @@
 ---
-title: "Draft Quarto document"
-author: "Your Name"
+title: "Draft analysis"
+author: "Andreas Gammelgaard Damsbo"
 format: html
 execute:
   echo: true
@@ -13,22 +13,21 @@ editor:
 ## Setup and load data
 
 ```{r setup}
+targets::tar_config_set(store = here::here("_targets"))
 library(tidyverse)
-source(here::here("R/functions.R"))
-lipidomics <- read_csv(here::here("data/lipidomics.csv"))
+library(targets)
+lipidomics <- tar_read(lipidomics)
 ```
 
-## Basic statistics
+## Results
 
-```{r basic-stats}
-lipidomics |>
-  group_by(metabolite) |>
-  summarise(across(value, list(mean = mean, sd = sd))) |>
-  mutate(across(where(is.numeric), ~ round(.x, digits = 1)))
+```{r}
+targets::tar_read(df_stats_by_metabolite) %>%
+  mutate(MeanSD = glue::glue("{value_mean} ({value_sd})")) %>%
+  select(Metabolite = metabolite, `Mean SD` = MeanSD) %>%
+  knitr::kable(caption = "Descriptive statistics of the metabolites.")
 ```
 
-```{r basic-stats-fun}
-
-
-lipidomics |> descriptive_stats()
+```{r}
+tar_read(fig_metabolites_distribution)
 ```

@@ -12,6 +12,7 @@ RoxygenNote: 7.2.3
 Imports: 
     dplyr,
     fs,
+    ggplot2,
     here,
     knitr,
     readr,
@@ -19,12 +20,15 @@ Imports:
     rmarkdown,
     snakecase,
     stringr,
+    tarchetypes,
     targets,
     tidyr,
     usethis
 Suggests: 
     gitcreds,
     pak,
+    prodigenr,
+    quarto,
     renv,
     stRoke,
     styler
