@@ -1,7 +1,8 @@
 
-~~TODO: Add more to the title of your project here~~
-
 # AdvancedR3: Course material and tasks for [Advanced Reproducible Research in R](https://ddeacademy.dk/events/course/advanced-course-on-reproducible-research-in-radvanced-course-on/)
+
+The pipelined website is now live here: [link](https://agdamsbo.github.io/advanced-r3/).
+
 
 ~~TODO: Give a brief description of what your project is about~~
 
