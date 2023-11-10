@@ -1,0 +1,9 @@
+# Lipidomics study
+
+This is the course outcome of the Advanced R3 course with the DDEA.
+
+## Targets tree
+
+```{r}
+targets::tar_visnetwork()
+```

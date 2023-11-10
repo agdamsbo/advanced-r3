@@ -50,3 +50,5 @@ rsconnect/
 data-raw/nmr-omics/
 .Rbuildignore
 .DS_Store
+
+/.quarto/

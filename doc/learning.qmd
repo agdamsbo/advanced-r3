@@ -1,31 +1,6 @@
 ---
 title: "Draft analysis"
 format: html
-execute:
-  echo: true
-editor:
-  markdown: 
-    wrap: 72
-    canonical: true
-author:
-  - name: Andreas
-    orcid: 0000-0002-7559-1154
-    email: andrlr@rm.dk
-    url: https://pure.au.dk/portal/en/persons/andreas-gammelgaard-damsbo(e3c4afce-3eba-4456-8b8b-2fd90775c87a).html
-    affiliations:
-      - ref: dsc
-    roles: [conceptualization, methodology, software]
-  - name: Christina Rubino
-    affiliation:
-      - ref: bbl
-    roles: [data curation, validation, conceptualization]
-affiliations:
-  - id: dsc
-    name: Danish Stroke Centre, AUH
-    department: Neurology
-    city: Aarhus
-    country: Denmark
-    url: https://www.en.auh.dk/departments/danish-stroke-centre/
 ---
 
 ## Setup and load data
