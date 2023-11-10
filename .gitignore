@@ -52,3 +52,4 @@ data-raw/nmr-omics/
 .DS_Store
 
 /.quarto/
+_site

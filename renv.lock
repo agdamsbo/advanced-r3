@@ -1578,6 +1578,33 @@
       ],
       "Hash": "1cba04a4e9414bdefc9dcaa99649a8dc"
     },
+    "r3": {
+      "Package": "r3",
+      "Version": "0.2.5",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "rostools",
+      "RemoteRepo": "r3",
+      "RemoteRef": "main",
+      "RemoteSha": "c0b4b1b523cf0e0a33292799f887f6eb32933b7e",
+      "Requirements": [
+        "R",
+        "cli",
+        "crayon",
+        "desc",
+        "dplyr",
+        "fs",
+        "gert",
+        "rlang",
+        "rstudioapi",
+        "rversions",
+        "stringr",
+        "usethis",
+        "utils"
+      ],
+      "Hash": "a45da730344e8f9092fb4625f060410f"
+    },
     "ragg": {
       "Package": "ragg",
       "Version": "1.2.6",
@@ -1808,6 +1835,18 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "5564500e25cffad9e22244ced1379887"
+    },
+    "rversions": {
+      "Package": "rversions",
+      "Version": "2.1.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "curl",
+        "utils",
+        "xml2"
+      ],
+      "Hash": "a9881dfed103e83f9de151dc17002cd1"
     },
     "rvest": {
       "Package": "rvest",

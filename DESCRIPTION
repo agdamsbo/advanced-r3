@@ -18,6 +18,7 @@ Imports:
     knitr,
     parsnip,
     purrr,
+    r3,
     readr,
     readxl,
     recipes,

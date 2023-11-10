@@ -23,7 +23,7 @@ tar_option_set(
   # Alternatively, if you want workers to run on a high-performance computing
   # cluster, select a controller from the {crew.cluster} package. The following
   # example is a controller for Sun Grid Engine (SGE).
-  # 
+  #
   #   controller = crew.cluster::crew_controller_sge(
   #     workers = 50,
   #     # Many clusters install R as an environment module, and you can load it
@@ -57,7 +57,7 @@ list(
   ),
   tar_target(
     name = lipidomics,
-    command = readr::read_csv(file,show_col_types = FALSE)
+    command = readr::read_csv(file, show_col_types = FALSE)
     # format = "feather" # efficient storage for large data frames
   ),
   tar_target(
@@ -70,11 +70,11 @@ list(
   ),
   tar_target(
     name = df_model_estimates,
-    command=calculate_estimates(lipidomics)
+    command = calculate_estimates(lipidomics)
   ),
   tar_target(
     name = fig_model_estimates,
-    command=plot_estimates(df_model_estimates)
+    command = plot_estimates(df_model_estimates)
   ),
   tar_quarto(
     name = quarto_website,
