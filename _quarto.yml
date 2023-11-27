@@ -9,9 +9,12 @@ website:
         text: Home
       - href: doc/learning.qmd
         text: "Report"
+      - href: doc/new-project.qmd
+        text: New project check-list
   page-footer:
     center:
       - text: "License: CC0 1.0"
+        href: LICENSE.html
 
 format:
   html:

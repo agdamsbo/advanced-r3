@@ -1,0 +1,27 @@
+## Steps to create a new streamlined project
+
+-   library(prodigenr)
+
+-   create new project with `prodigenr` template
+
+-   Run `usethis::edit_r_profile("project")` to modify the `.Rprofile`
+    file. Add the following:
+
+    ```         
+    options(
+      renv.settings.snapshot.type = "explicit",
+      renv.config.auto.snapshot = TRUE,
+      renv.config.pak.enabled = TRUE
+    )
+    source("renv/activate.R")
+
+    if (interactive()) {
+      suppressMessages(require(usethis))
+    }
+    ```
+
+-   Run `use_package("targets")` to add the targets package
+
+-   run `targets::use_targets()`
+
+-   modify the `_targets.R` file
