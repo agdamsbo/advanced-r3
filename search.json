@@ -28,6 +28,20 @@
     "text": "Figure of model estimates\n\n\n# A tibble: 12 × 6\n   term                         metabolite  estimate std.error statistic p.value\n   &lt;chr&gt;                        &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n 1 metabolite_tms_interntal_st… TMS (inte… 5.62e-  2   9.90e-1 -2.91     0.00363\n 2 metabolite_cholesterol       Cholester… 2.97e+  0   4.58e-1  2.38     0.0175 \n 3 metabolite_lipid_ch_3_1      Lipid CH3… 4.45e+  1   1.41e+0  2.70     0.00697\n 4 metabolite_lipid_ch_3_2      Lipid CH3… 8.85e-  1   3.61e-1 -0.339    0.734  \n 5 metabolite_lipid_ch_2        Lipid -CH… 2.59e-  3   3.14e+0 -1.90     0.0578 \n 6 metabolite_fa_ch_2_ch_2_coo  FA -CH2CH… 1.52e+  0   3.87e-1  1.09     0.276  \n 7 metabolite_pufa              PUFA       3.27e+  0   5.60e-1  2.11     0.0345 \n 8 metabolite_phosphatidyletha… Phosphati… 2.69e+  1   1.32e+0  2.49     0.0129 \n 9 metabolite_phosphatidycholi… Phosphati… 1.28e-120   1.17e+5 -0.00237  0.998  \n10 metabolite_phospholipids     Phospholi… 2.39e- 19   6.90e+4 -0.000622 1.00   \n11 metabolite_mufa_pufa         MUFA+PUFA  4.56e-  1   4.49e-1 -1.75     0.0798 \n12 metabolite_cd_cl_3_solvent   CDCl3 (so… 8.70e-  2   8.65e-1 -2.82     0.00475"
   },
   {
+    "objectID": "doc/new-project.html",
+    "href": "doc/new-project.html",
+    "title": "Lipidomics analysis",
+    "section": "",
+    "text": "library(prodigenr)\ncreate new project with prodigenr template\nRun usethis::edit_r_profile(\"project\") to modify the .Rprofile file. Add the following:\noptions(\n  renv.settings.snapshot.type = \"explicit\",\n  renv.config.auto.snapshot = TRUE,\n  renv.config.pak.enabled = TRUE\n)\nsource(\"renv/activate.R\")\n\nif (interactive()) {\n  suppressMessages(require(usethis))\n}\nRun use_package(\"targets\") to add the targets package\nrun targets::use_targets()\nmodify the _targets.R file"
+  },
+  {
+    "objectID": "doc/new-project.html#steps-to-create-a-new-streamlined-project",
+    "href": "doc/new-project.html#steps-to-create-a-new-streamlined-project",
+    "title": "Lipidomics analysis",
+    "section": "",
+    "text": "library(prodigenr)\ncreate new project with prodigenr template\nRun usethis::edit_r_profile(\"project\") to modify the .Rprofile file. Add the following:\noptions(\n  renv.settings.snapshot.type = \"explicit\",\n  renv.config.auto.snapshot = TRUE,\n  renv.config.pak.enabled = TRUE\n)\nsource(\"renv/activate.R\")\n\nif (interactive()) {\n  suppressMessages(require(usethis))\n}\nRun use_package(\"targets\") to add the targets package\nrun targets::use_targets()\nmodify the _targets.R file"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Lipidomics study",

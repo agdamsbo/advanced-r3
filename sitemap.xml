@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/agdamsbo/advanced-r3/doc/learning.html</loc>
-    <lastmod>2023-11-10T12:27:55.516Z</lastmod>
+    <loc>https://github.com/agdamsbo/advanced-r3/LICENSE.html</loc>
+    <lastmod>2023-11-27T11:25:29.669Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/agdamsbo/advanced-r3/LICENSE.html</loc>
-    <lastmod>2023-11-10T12:27:54.436Z</lastmod>
+    <loc>https://github.com/agdamsbo/advanced-r3/doc/learning.html</loc>
+    <lastmod>2023-11-27T11:25:29.017Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/agdamsbo/advanced-r3/doc/new-project.html</loc>
+    <lastmod>2023-11-27T11:25:28.389Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/agdamsbo/advanced-r3/index.html</loc>
-    <lastmod>2023-11-10T12:27:55.108Z</lastmod>
+    <lastmod>2023-11-27T11:25:29.285Z</lastmod>
   </url>
 </urlset>
